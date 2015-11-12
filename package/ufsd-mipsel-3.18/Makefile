@@ -8,7 +8,7 @@
 include $(TOPDIR)/rules.mk
 include $(INCLUDE_DIR)/kernel.mk
 
-PKG_NAME:=ufsd-mipsel
+PKG_NAME:=ufsd-mipsel-3.18
 
 PKG_VERSION:=1
 PKG_RELEASE:=1
@@ -18,7 +18,7 @@ PKG_BUILD_DIR:=$(KERNEL_BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
 include $(INCLUDE_DIR)/package.mk
 
 
-define KernelPackage/ufsd-mipsel
+define KernelPackage/ufsd-mipsel-3.18
   SUBMENU:=Filesystems
   TITLE:=Paragon ufsd for mipsel
   DEPENDS:=@TARGET_ramips +kmod-nls-base +kmod-nls-utf8
@@ -27,7 +27,7 @@ define KernelPackage/ufsd-mipsel
   AUTOLOAD:=$(call AutoLoad,50,ufsd)
 endef
 
-define KernelPackage/ufsd-mipsel/description
+define KernelPackage/ufsd-mipsel-3.18/description
 Paragon ufsd is a fs driverof ntfs
 endef
 
@@ -47,7 +47,7 @@ MAKEOPTS:= -C $(LINUX_DIR) \
 
 define Build/Prepare
 	mkdir -p $(PKG_BUILD_DIR)
-	$(CP) ./ufsd-mipsel/* $(PKG_BUILD_DIR)/
+	$(CP) ./src-3.18/* $(PKG_BUILD_DIR)/
 	$(call Build/Prepare/Default)
 endef
 
@@ -56,7 +56,7 @@ define Build/Compile
 	$(MAKE) $(MAKEOPTS)
 endef
 
-define KernelPackage/ufsd-mipsel/install
+define KernelPackage/ufsd-mipsel-3.18/install
 endef
 
-$(eval $(call KernelPackage,ufsd-mipsel))
+$(eval $(call KernelPackage,ufsd-mipsel-3.18))
