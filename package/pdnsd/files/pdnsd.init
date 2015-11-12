@@ -113,6 +113,7 @@ load_server() {
 
 #config source
 #	option owner localhost
+#	option ttl 86400
 #	option file '/etc/hosts'
 load_source() {
 	local cfg="$1"
@@ -120,6 +121,7 @@ load_source() {
 	start_section "source"
 
 	append_parm "$cfg" owner "--owner"
+	append_parm "$cfg" ttl "--ttl"
 	append_parm "$cfg" file "--file"
 
 	end_section
