@@ -17,7 +17,7 @@ msgid "QOSv4 title"
 msgstr "QoS 脚本"
 
 msgid "qosv4 title desc"
-msgstr "小包优先+web优先+游戏爆发+单IP限速+连接数限制 QOS脚本V4.0 ，主要参考自zhoutao0712的tomato脚本，飞翔的天空整理移植，并添加了部分新功能。2015.11.03由twxl1993重新整理。"
+msgstr "小包优先+web优先+游戏爆发+单IP限速+连接数限制 QOS脚本V4.0 ，主要参考自zhoutao0712的tomato脚本，飞翔的天空整理移植，并添加了部分新功能。"
 
 
 msgid "qos globle settings"
