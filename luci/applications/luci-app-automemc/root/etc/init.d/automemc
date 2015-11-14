@@ -1,6 +1,6 @@
 #!/bin/sh /etc/rc.common
 
-START=65
+START=99
 NAME=automemc
 DESC="Auto memory cleanup"
 

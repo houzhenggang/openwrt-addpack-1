@@ -1,4 +1,4 @@
 config automemc
-	option enable '1'
+	option enable '0'
 	option minval '10'
 	option frequency '30'

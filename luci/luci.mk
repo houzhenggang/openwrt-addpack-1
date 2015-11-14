@@ -9,9 +9,6 @@ LUCI_TYPE?=$(word 2,$(subst -, ,$(LUCI_NAME)))
 LUCI_BASENAME?=$(patsubst luci-$(LUCI_TYPE)-%,%,$(LUCI_NAME))
 LUCI_LANGUAGES:=$(filter-out templates,$(notdir $(wildcard ${CURDIR}/po/*)))
 LUCI_DEFAULTS:=$(notdir $(wildcard ${CURDIR}/root/etc/uci-defaults/*))
-LUCI_BIN_DEFAULTS:=$(notdir $(wildcard ${CURDIR}/root/usr/bin/*))
-LUCI_SBIN_DEFAULTS:=$(notdir $(wildcard ${CURDIR}/root/usr/sbin/*))
-LUCI_INIT_DEFAULTS:=$(notdir $(wildcard ${CURDIR}/root/etc/init.d/*))
 LUCI_PKGARCH?=$(if $(realpath src/Makefile),,all)
 
 # Language code titles
@@ -156,10 +153,6 @@ ifneq ($(LUCI_DEFAULTS),)
 define Package/$(PKG_NAME)/postinst
 [ -n "$${IPKG_INSTROOT}" ] || {$(foreach script,$(LUCI_DEFAULTS),
 	(. /etc/uci-defaults/$(script)) && rm -f /etc/uci-defaults/$(script))
-	$(foreach bin,$(LUCI_BIN_DEFAULTS), chmod 755 /usr/bin/$(bin))
-	$(foreach bin,$(LUCI_SBIN_DEFAULTS), chmod 755 /usr/sbin/$(bin))
-	$(foreach bin,$(LUCI_INIT_DEFAULTS),
-	chmod 755 /etc/init.d/$(bin) && /etc/init.d/$(bin) enable)
 	exit 0
 }
 endef

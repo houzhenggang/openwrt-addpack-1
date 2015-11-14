@@ -7,5 +7,10 @@ uci -q batch <<-EOF >/dev/null
 	commit ucitrack
 EOF
 
+chmod 755 /etc/init.d/automemc
+chmod 755 /usr/sbin/automemc
+
+/etc/init.d/automemc enable
+
 rm -f /tmp/luci-indexcache
 exit 0

@@ -5,13 +5,13 @@ msgid "pdnsd"
 msgstr "DNS代理服务器"
 
 msgid "global Section"
-msgstr "global 区间"
+msgstr "global 部分"
 
 msgid "server Section"
-msgstr "server 区间"
+msgstr "server 部分"
 
 msgid "source Section"
-msgstr "source 区间"
+msgstr "source 部分"
 
 msgid "Status Control"
 msgstr "状态控制"
@@ -143,7 +143,7 @@ msgid "TTL"
 msgstr "TTL"
 
 msgid "TTL desc"
-msgstr "指定进入本入口的本区间所有资源记录存活时间"
+msgstr "指定进入本入口之后的本部分所有资源记录存活时间"
 
 msgid "File"
 msgstr "文件"

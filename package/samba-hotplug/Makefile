@@ -19,7 +19,7 @@ define Package/samba-hotplug
   SUBMENU:=disc
   TITLE:=Samba autoconfig hotplug script.
   MAINTAINER:=twxl1993
-  DEPENDS:=+kmod-usb-storage +kmod-fs-ext4 +kmod-fs-vfat +kmod-fs-exfat +kmod-nls-cp437 +kmod-nls-iso8859-1 +kmod-nls-utf8 +blkid +hdparm
+  DEPENDS:=+kmod-usb-storage +kmod-fs-ext4 +kmod-fs-vfat +kmod-fs-udf +kmod-fs-msdos +kmod-fs-exfat +kmod-fs-ufsd +kmod-nls-cp437 +kmod-nls-iso8859-1 +kmod-nls-utf8 +blkid +hdparm
 endef
 
 define Package/samba-hotplug/description
